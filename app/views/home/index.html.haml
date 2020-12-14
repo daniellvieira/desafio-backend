@@ -1,0 +1,29 @@
+- model_class = FileHistory
+%h2.text-center.pb-3= t('.title')
+.row
+  .col.p-0
+    = flash_message
+
+.row.mb-3
+  .col.card.shadow.overflow-inherit.p-3
+    %p.mb-0= t('.description')
+
+.row.mb-3
+  .col.card.shadow.overflow-inherit
+    .d-sm-flex.align-items-center.justify-content-between.pb-3.pt-3
+      .h4.title-gray= t('.send_csv_file')
+    = form_with model: @file_history, url: file_histories_path(@file_history), method: :post do |f|
+      .card-body
+        .form-group.row
+          = f.label :description, model_class.human_attribute_name(:description),
+                                  class: label_class(3)
+          .col-md-9
+            = f.text_field :description, required: true, class: 'form-control'
+        .form-group.row
+          = f.label :file, model_class.human_attribute_name(:file), class: label_class(3)
+          .col-9
+            = f.file_field :file, accept: '.csv', required: true
+        .form-group.float-right
+          = f.submit t('.send', default: t('helpers.submit.send')), class: btn_class(:primary)
+#list
+  = render partial: 'parlamentarians/list'

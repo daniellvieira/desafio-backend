@@ -1,0 +1,4 @@
+pt-BR:
+  file_histories:
+    create:
+      success_return: 'Cadastro realizando com sucesso, em breve iremos processar o arquivo.'

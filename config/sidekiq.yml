@@ -1,0 +1,19 @@
+:verbose: true
+staging:
+  :concurrency: 5
+production:
+  :concurrency: 10
+:max_retries: 20
+
+:queues:
+  - agendaedu_critical
+  - agendaedu_mailers
+  - agendaedu_urgent
+  - agendaedu_default
+  - agendaedu_action_mailbox_routing
+  - agendaedu_action_mailbox_incineration
+  - agendaedu_active_storage_analysis
+  - agendaedu_active_storage_purge
+  - agendaedu_low
+  - agendaedu
+  - agendaedu_test

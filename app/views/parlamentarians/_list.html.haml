@@ -1,0 +1,39 @@
+- model_class = Parlamentarian
+.row
+  .col.card.shadow.overflow-inherit
+    .d-sm-flex.align-items-center.justify-content-between.pb-3.pt-3
+      .h4.title-gray= t('.title')
+    .table-responsive
+      %table.table.table-hover.table-borderless.text-center
+        %thead.thead-light
+          %tr
+            %th{title: model_class.human_attribute_name(:name_detail)}
+              = model_class.human_attribute_name(:name)
+            %th{title: model_class.human_attribute_name(:id_register_detail)}
+              = model_class.human_attribute_name(:id_register)
+            %th{title: model_class.human_attribute_name(:num_portfolio_detail)}
+              = model_class.human_attribute_name(:num_portfolio)
+            %th{title: model_class.human_attribute_name(:num_legislature_detail)}
+              = model_class.human_attribute_name(:num_legislature)
+            %th{title: model_class.human_attribute_name(:uf_detail)}
+              = model_class.human_attribute_name(:uf)
+            %th{title: model_class.human_attribute_name(:political_party_detail)}
+              = model_class.human_attribute_name(:political_party)
+            %th{title: model_class.human_attribute_name(:cod_legislature_detail)}
+              = model_class.human_attribute_name(:cod_legislature)
+        %tbody
+          - @parlamentarians.each do |parlamentarian|
+            %tr
+              %td= parlamentarian.name
+              %td= parlamentarian.id_register
+              %td= parlamentarian.num_portfolio
+              %td= parlamentarian.num_legislature
+              %td= parlamentarian.uf
+              %td= parlamentarian.political_party
+              %td= parlamentarian.cod_legislature
+    .d-flex.justify-content-between
+      #left.bd-highlight
+      %center.bd-highlight.page
+        = paginate @parlamentarians, remote: true
+        = page_entries_info @parlamentarians
+      #right.bd-highlight

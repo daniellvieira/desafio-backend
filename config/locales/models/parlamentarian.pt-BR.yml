@@ -1,0 +1,21 @@
+pt-BR:
+  activerecord:
+    attributes:
+      parlamentarian:
+        id: "#"
+        name: 'Nome Parlamentar'
+        name_detail: 'Nome adotado pelo Parlamentar ao tomar posse do seu mandato. Compõe-se de dois elementos: um prenome e o nome; dois nomes; ou dois prenomes, salvo, a juízo do Presidente da Casa legislativa, que poderá alterar essa regra para que não ocorram confusões'
+        id_register: 'Identificador Único do Parlamentar'
+        id_register_detail: 'Número que identifica unicamente um deputado federal na CD.'
+        num_portfolio: 'Número da  Carteira Parlamentar'
+        num_portfolio_detail: 'Documento usado para identificar um deputado federal na CD. Pode alterar a cada Legislatura nova.'
+        num_legislature: 'Número da  Legislatura'
+        num_legislature_detail: 'Legislatura: Período de quatro anos coincidente com o mandato parlamentar dos Deputados Federais. No contexto da cota CEAP, representa o ano base de início da legislatura e é utilizado para compor a Carteira Parlamentar, pois esta poderá ser alterada à medida que se muda de Legislatura.'
+        uf: 'Sigla da UF'
+        uf_detail: 'No contexto da cota CEAP, representa a unidade da federação pela qual o deputado foi eleito e é utilizada para definir o valor da cota a que o deputado tem.'
+        political_party: 'Sigla do Partido'
+        political_party_detail: 'O seu conteúdo representa a sigla de um partido. Definição de partido: é uma organização formada por pessoas com interesse ou ideologia comuns, que se associam com o fim de assumir o poder para implantar um programa de governo. Tem personalidade jurídica de direito privado e goza de autonomia e liberdade no que diz respeito à criação, organização e funcionamento, observados os princípios e preceitos constitucionais.'
+        cod_legislature: 'Código da Legislatura'
+        cod_legislature_detail: 'Legislatura: Período de quatro anos coincidente com o mandato parlamentar dos Deputados Federais. No contexto da cota CEAP, o seu conteúdo representa o código identificador da Legislatura, que um número ordinal sequencial, alterado de um em um, a cada início de uma nova Legislatura (por exemplo, a Legislatura que iniciou em 2011 é a 54ª Legislatura).'
+        created_at: Data de Cadastro
+        updated_at: Data de Atualização

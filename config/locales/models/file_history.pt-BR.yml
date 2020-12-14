@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    attributes:
+      file_history:
+        id: "#"
+        description: Descrição
+        file: Arquivo
+        created_at: Data de Cadastro
+        updated_at: Data de Atualização
