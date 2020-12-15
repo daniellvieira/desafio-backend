@@ -3,6 +3,13 @@
   .col.card.shadow.overflow-inherit
     .d-sm-flex.align-items-center.justify-content-between.pb-3.pt-3
       .h4.title-gray= t('.title')
+    = search_form_for @search, url: root_path, class: 'form-inline' do |f|
+      .form-group.mb-2
+        = f.label :name, "Pesquisar pelo Nome ou Partido"
+      .form-group.mx-sm-3.mb-2
+        = f.text_field :name_or_political_party_cont, class: 'form-control'
+      = f.submit t('helpers.submit.search'), class: 'btn btn-primary mb-2'
+      = link_to t('helpers.submit.clear'), root_path, class: 'btn btn-link mb-2'
     .table-responsive
       %table.table.table-hover.table-borderless.text-center
         %thead.thead-light
