@@ -6,7 +6,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   config.active_job.queue_adapter     = :sidekiq
-  config.active_job.queue_name_prefix = 'agendaedu'
+  config.active_job.queue_name_prefix = 'agenda_edu'
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers

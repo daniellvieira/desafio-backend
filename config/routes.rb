@@ -1,11 +1,12 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  resources :expenses
   root 'home#index'
 
   resources :file_histories, only: %i[create]
-  resources :parlamentarians
+  resources :parlamentarians do
+    resources :expenses, only: %i[index]
+  end
 
   mount Sidekiq::Web => '/sidekiq'
 

@@ -5,6 +5,8 @@ class ProcessFileService
   end
 
   def call
+    return true unless @file_history.pending?
+
     @path = set_path_file
     process
     @file_history.success!

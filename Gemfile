@@ -37,6 +37,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'csv'
 # Paginate objects. Read more: https://github.com/kaminari/kaminari
 gem 'kaminari'
+# Using validates in active storage - https://github.com/igorkasyanchuk/active_storage_validations
+gem 'active_storage_validations'
 
 gem 'font-awesome-sass'
 

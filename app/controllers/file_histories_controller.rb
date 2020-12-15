@@ -7,7 +7,7 @@ class FileHistoriesController < ApplicationController
     @file_history = FileHistory.new(file_history_params)
 
     if @file_history.save
-      ProcessPendingFileHistoryJob.perform_later(@file_history)
+      ProcessPendingFileHistoryJob.perform_later(@file_history.id)
       redirect_to root_path, notice: t('.success_return')
     else
       redirect_back fallback_location: root_path,

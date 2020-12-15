@@ -13,7 +13,7 @@
               = model_class.human_attribute_name(:name)
             %th{title: model_class.human_attribute_name(:political_party_detail)}
               = model_class.human_attribute_name(:political_party)
-            %th= model_class.human_attribute_name(:total)
+            %th= t('.total')
             %th= t('helpers.list.actions')
         %tbody
           - @parlamentarians.each do |parlamentarian|
@@ -23,7 +23,8 @@
               %td= parlamentarian.political_party
               %td= number_to_currency(parlamentarian.total)
               %td
-                %i.fas.fa-search
+                = link_to parlamentarian_expenses_path(parlamentarian) do
+                  %i.fas.fa-search
     .d-flex.justify-content-between
       #left.bd-highlight
       %center.bd-highlight.page
