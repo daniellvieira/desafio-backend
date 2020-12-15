@@ -3,7 +3,7 @@
 class HomeController < ApplicationController
   def index
     @file_history = FileHistory.new
-    @parlamentarians = Parlamentarian.filter(filter_parlamentarians_params)
+    @parlamentarians = Parlamentarian.select_totals
                                      .page(params[:page])
   end
 

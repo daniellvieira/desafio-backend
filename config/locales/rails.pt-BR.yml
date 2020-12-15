@@ -152,6 +152,8 @@ pt-BR:
       update: Atualizar %{models}
       confirm: Confirmar
       send: Enviar
+    list:
+      actions: Ações
   number:
     currency:
       format:

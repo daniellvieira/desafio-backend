@@ -1,0 +1,29 @@
+%h1 Listing expenses
+
+%table
+  %thead
+    %tr
+      %th Parlamentarian
+      %th Date issue
+      %th Provider
+      %th Value
+      %th Url document
+      %th
+      %th
+      %th
+
+  %tbody
+    - @expenses.each do |expense|
+      %tr
+        %td= expense.parlamentarian
+        %td= expense.date_issue
+        %td= expense.provider
+        %td= expense.value
+        %td= expense.url_document
+        %td= link_to 'Show', expense
+        %td= link_to 'Edit', edit_expense_path(expense)
+        %td= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Expense', new_expense_path
