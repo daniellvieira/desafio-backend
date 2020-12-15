@@ -37,7 +37,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'csv'
 # Using validates in active storage - https://github.com/igorkasyanchuk/active_storage_validations
 gem 'active_storage_validations'
-Procfile
+
 gem 'font-awesome-sass'
 
 group :development, :test do
