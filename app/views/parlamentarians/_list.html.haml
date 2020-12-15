@@ -3,26 +3,24 @@
   .col.card.shadow.overflow-inherit
     .d-sm-flex.align-items-center.justify-content-between.pb-3.pt-3
       .h4.title-gray= t('.title')
-
-    = search_form_for @q do |f|
-      = f.label :name_cont
-      = f.search_field :name_cont
-      = f.label :articles_title_start
-      = f.search_field :articles_title_start
-      = f.label :name_or_description_or_email_or_articles_title_cont
-      = f.search_field :name_or_description_or_email_or_articles_title_cont
-      = f.submit
+    = search_form_for @search, url: root_path, class: 'form-inline' do |f|
+      .form-group.mb-2
+        = f.label :name, "Pesquisar pelo Nome ou Partido"
+      .form-group.mx-sm-3.mb-2
+        = f.text_field :name_or_political_party_cont, class: 'form-control'
+      = f.submit t('helpers.submit.search'), class: 'btn btn-primary mb-2'
+      = link_to t('helpers.submit.clear'), root_path, class: 'btn btn-link mb-2'
     .table-responsive
       %table.table.table-hover.table-borderless.text-center
         %thead.thead-light
           %tr
             %th{title: model_class.human_attribute_name(:id_register_detail)}
-              = model_class.human_attribute_name(:id_register)
+              = sort_link(@search, :id_register, model_class.human_attribute_name(:id_register))
             %th{title: model_class.human_attribute_name(:name_detail)}
-              = model_class.human_attribute_name(:name)
+              = sort_link(@search, :name, model_class.human_attribute_name(:name))
             %th{title: model_class.human_attribute_name(:political_party_detail)}
-              = model_class.human_attribute_name(:political_party)
-            %th= t('.total')
+              = sort_link(@search, :political_party, model_class.human_attribute_name(:political_party))
+            %th= sort_link(@search, :total, t('.total'))
             %th= t('helpers.list.actions')
         %tbody
           - @parlamentarians.each do |parlamentarian|

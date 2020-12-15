@@ -1,29 +1,104 @@
-%h1 Listing expenses
+.row
+  .col-md-3.pl-0.pb-3
+    .card.text-center.shadow.overflow-inherit
+      %img.card-img-top{:alt => "Card image cap", src: image_parlamentarian_url(@parlamentarian.id_register)}/
+      .card-body
+        %h5.card-title= @parlamentarian.name
+  .col-md-9.pr-0
+    .card.shadow.overflow-inherit.p-3
+      .d-sm-flex.align-items-center.justify-content-between.pb-3.pt-3
+        .h4.title-gray= t('.top5_title')
+      .list-group
+        - @top5_expenses.each do |expense|
+          .list-group-item.list-group-item-action
+            = details_expense(expense)
+.row
+  .col-md-6.pl-0.pb-3
+    .card.shadow.overflow-inherit.p-3
+      .d-sm-flex.align-items-center.justify-content-between.pb-3.pt-3
+        .h4.title-gray= t('.month_expense_title')
+      %canvas#monthExpense{:height => "100", :width => "100"}
+  .col-md-6.pr-0
+    .card.shadow.overflow-inherit.p-3
+      .d-sm-flex.align-items-center.justify-content-between.pb-3.pt-3
+        .h4.title-gray= t('.provider_title')
+      %canvas#providerExpense{:height => "100", :width => "100"}
+#list
+  = render partial: 'list'
 
-%table
-  %thead
-    %tr
-      %th Parlamentarian
-      %th Date issue
-      %th Provider
-      %th Value
-      %th Url document
-      %th
-      %th
-      %th
+:javascript
+  var ctx = document.getElementById('monthExpense').getContext('2d');
+  var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          }
+      }
+  });
 
-  %tbody
-    - @expenses.each do |expense|
-      %tr
-        %td= expense.parlamentarian
-        %td= expense.date_issue
-        %td= expense.provider
-        %td= expense.value
-        %td= expense.url_document
-        %td= link_to 'Show', expense
-        %td= link_to 'Edit', edit_expense_path(expense)
-        %td= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Expense', new_expense_path
+  var ctx2 = document.getElementById('providerExpense').getContext('2d');
+  var myPieChart = new Chart(ctx2, {
+      type: 'pie',
+      data: {
+          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+          datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                  'rgba(255, 99, 132, 1)',
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)',
+                  'rgba(153, 102, 255, 1)',
+                  'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1
+          }]
+      },
+      options: {
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero: true
+                  }
+              }]
+          }
+      }
+  });

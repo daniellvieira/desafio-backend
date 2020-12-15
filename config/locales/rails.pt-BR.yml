@@ -153,6 +153,8 @@ pt-BR:
       update: Atualizar %{models}
       confirm: Confirmar
       send: Enviar
+      search: Pesquisar
+      clear: Limpar
     list:
       actions: Ações
   number:

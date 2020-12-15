@@ -1,0 +1,8 @@
+pt-BR:
+  expenses:
+    index:
+      top5_title: 'TOP 5 de Gastos'
+      month_expense_title: 'Gastos por Mês'
+      provider_title: 'Gastos por Fornecedor'
+    list:
+      title: Detalhamento de Despesas
