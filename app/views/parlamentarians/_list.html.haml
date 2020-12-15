@@ -3,6 +3,15 @@
   .col.card.shadow.overflow-inherit
     .d-sm-flex.align-items-center.justify-content-between.pb-3.pt-3
       .h4.title-gray= t('.title')
+
+    = search_form_for @q do |f|
+      = f.label :name_cont
+      = f.search_field :name_cont
+      = f.label :articles_title_start
+      = f.search_field :articles_title_start
+      = f.label :name_or_description_or_email_or_articles_title_cont
+      = f.search_field :name_or_description_or_email_or_articles_title_cont
+      = f.submit
     .table-responsive
       %table.table.table-hover.table-borderless.text-center
         %thead.thead-light

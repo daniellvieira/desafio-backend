@@ -3,8 +3,8 @@
 class HomeController < ApplicationController
   def index
     @file_history = FileHistory.new
-    @parlamentarians = Parlamentarian.select_totals
-                                     .page(params[:page])
+    @q = Parlamentarian.select_totals.ransack(params[:q])
+    @parlamentarians = @q.result(distinct: true).page(params[:page])
   end
 
   def filter_parlamentarians_params

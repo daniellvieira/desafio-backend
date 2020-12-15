@@ -26,7 +26,7 @@ gem 'sidekiq'
 gem 'haml', '~> 5.2.1'
 gem 'haml-rails', '~> 2.0.1'
 # Use Active Storage variant
-gem 'image_processing', '~> 1.2'
+# gem 'image_processing', '~> 1.2'
 # Paginate objects. Read more: https://github.com/kaminari/kaminari
 gem 'kaminari'
 # https://github.com/activerecord-hackery/ransack
