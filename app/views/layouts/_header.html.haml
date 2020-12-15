@@ -1,0 +1,13 @@
+.row
+  .col-auto.mr-auto
+    = link_to root_path do
+      %i.fas.fa-home.fa-3x
+  .col
+    %h2.text-center.pb-3{style: 'color: #007bff'}= t('.title')
+.row
+.row
+  .col.p-0
+    = flash_message
+.row.mb-3
+  .col.card.shadow.overflow-inherit.p-3
+    %p.mb-0= t('.description')

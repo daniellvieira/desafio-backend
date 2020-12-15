@@ -1,0 +1,39 @@
+- model_class = Expense
+.row
+  .col.card.shadow.overflow-inherit
+    .d-sm-flex.align-items-center.justify-content-between.pb-3.pt-3
+      .h4.title-gray= t('.title')
+    = search_form_for @search, url: parlamentarian_expenses_path(@parlamentarian), class: 'form-inline' do |f|
+      .form-group.mb-2
+        = f.label :name, "Pesquisar pelo Fornecedor"
+      .form-group.mx-sm-3.mb-2
+        = f.text_field :provider_cont, class: 'form-control'
+      = f.submit t('helpers.submit.search'), class: 'btn btn-primary mb-2'
+      = link_to t('helpers.submit.clear'), nil, class: 'btn btn-link mb-2'
+    .table-responsive
+      %table.table.table-hover.table-borderless.text-center
+        %thead.thead-light
+          %tr
+            %th{title: model_class.human_attribute_name(:date_issue)}
+              = sort_link(@search, :date_issue, model_class.human_attribute_name(:date_issue))
+            %th{title: model_class.human_attribute_name(:provider)}
+              = sort_link(@search, :provider, model_class.human_attribute_name(:provider))
+            %th{title: model_class.human_attribute_name(:value)}
+              = sort_link(@search, :value, model_class.human_attribute_name(:value))
+            %th{title: model_class.human_attribute_name(:url_document)}
+              = model_class.human_attribute_name(:url_document)
+        %tbody
+          - @expenses.each do |expense|
+            %tr
+              %td=l expense.date_issue
+              %td= expense.provider
+              %td= number_to_currency(expense.value)
+              %td
+                = link_to expense.url_document, target: '_blank' do
+                  %i.fas.fa-file
+    .d-flex.justify-content-between
+      #left.bd-highlight
+      %center.bd-highlight.page
+        = paginate @expenses, remote: true
+        = page_entries_info @expenses
+      #right.bd-highlight

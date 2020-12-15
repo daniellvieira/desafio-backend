@@ -1,29 +1,19 @@
-%h1 Listing expenses
-
-%table
-  %thead
-    %tr
-      %th Parlamentarian
-      %th Date issue
-      %th Provider
-      %th Value
-      %th Url document
-      %th
-      %th
-      %th
-
-  %tbody
-    - @expenses.each do |expense|
-      %tr
-        %td= expense.parlamentarian
-        %td= expense.date_issue
-        %td= expense.provider
-        %td= expense.value
-        %td= expense.url_document
-        %td= link_to 'Show', expense
-        %td= link_to 'Edit', edit_expense_path(expense)
-        %td= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Expense', new_expense_path
+.row
+  .col-md-3.pl-0.pb-3
+    .card.text-center.shadow.overflow-inherit
+      %img.card-img-top{:alt => "Card image cap", src: image_parlamentarian_url(@parlamentarian.id_register)}/
+      .card-body
+        %h5.card-title= @parlamentarian.name
+  .col-md-9.pr-0
+    .card.shadow.overflow-inherit.p-3
+      .d-sm-flex.align-items-center.justify-content-between.pb-3.pt-3
+        .h4.title-gray= t('.top5_title')
+      .list-group
+        %a.list-group-item.list-group-item-action.active{:href => "#"}
+          Cras justo odio
+        %a.list-group-item.list-group-item-action{:href => "#"} Dapibus ac facilisis in
+        %a.list-group-item.list-group-item-action{:href => "#"} Morbi leo risus
+        %a.list-group-item.list-group-item-action{:href => "#"} Porta ac consectetur ac
+        %a.list-group-item.list-group-item-action.disabled{:href => "#"} Vestibulum at eros
+#list
+  = render partial: 'list'

@@ -1,0 +1,6 @@
+pt-BR:
+  expenses:
+    index:
+      top5_title: 'TOP 5 de Gastos'
+    list:
+      title: Detalhamento de Despesas

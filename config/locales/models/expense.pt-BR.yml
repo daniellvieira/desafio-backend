@@ -1,0 +1,12 @@
+pt-BR:
+  activerecord:
+    attributes:
+      expense:
+        id: "#"
+        date_issue: Data de Emissão
+        provider: Fornecedor
+        value: Valor
+        url_document: URL do Documento
+        id_document: ID do Documento
+        created_at: Data de Cadastro
+        updated_at: Data de Atualização
