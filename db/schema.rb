@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_14_192135) do
+ActiveRecord::Schema.define(version: 2020_12_15_184230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,24 @@ ActiveRecord::Schema.define(version: 2020_12_14_192135) do
     t.string "id_document"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "num_sub_quota"
+    t.string "desc_sub_quota"
+    t.string "num_spec_sub_quota"
+    t.string "desc_spec_sub_quota"
+    t.string "cpf_cnpj"
+    t.string "num_document"
+    t.string "type_document"
+    t.string "value_document"
+    t.string "value_gloss"
+    t.string "month"
+    t.string "year"
+    t.string "num_portion"
+    t.string "passenger"
+    t.string "stretch"
+    t.string "num_lot"
+    t.string "num_reimbursement"
+    t.string "value_refund"
+    t.string "num_parlamentarian"
     t.index ["parlamentarian_id"], name: "index_expenses_on_parlamentarian_id"
   end
 
