@@ -6,7 +6,7 @@ RSpec.describe Parlamentarian, type: :model do
   end
 
   describe 'Validations' do
-    it { is_expected.to validate_uniqueness_of(:id_register) }
+    it { is_expected.to validate_uniqueness_of(:id_register).case_insensitive }
     it { is_expected.to validate_presence_of(:id_register) }
     it { is_expected.to validate_presence_of(:uf) }
     it { is_expected.to validate_presence_of(:num_legislature) }

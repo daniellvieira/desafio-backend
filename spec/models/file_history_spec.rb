@@ -35,7 +35,7 @@ RSpec.describe FileHistory, type: :model do
 
     it 'is attached' do
       @file_history.file.attach(
-        io: File.open(Rails.root.join('spec', 'support', 'assets', 'Ano-2020.csv')),
+        io: File.open(Rails.root.join('spec', 'support', 'assets', 'Ano-20201.csv')),
         filename: 'filename.xlsx',
         content_type: 'application/xlsx'
       )

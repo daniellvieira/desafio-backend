@@ -24,8 +24,9 @@
           1,
           null,
           null,
-          2,
+          3,
           1,
+          3,
           null,
           null,
           null,
@@ -502,6 +503,50 @@
           null
         ]
       },
+      "/home/daniel/workspace/agendaedu/spec/support/fake_rows_helper.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          4,
+          4,
+          null,
+          null
+        ]
+      },
       "/home/daniel/workspace/agendaedu/spec/support/file_test_helper.rb": {
         "lines": [
           1,
@@ -517,6 +562,58 @@
           1,
           8,
           8,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/daniel/workspace/agendaedu/spec/services/current_parlamentarian_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          2,
+          null,
+          null,
+          null,
+          3,
+          null,
+          2,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/daniel/workspace/agendaedu/spec/services/process_file_service_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -970,8 +1067,43 @@
           null,
           null
         ]
+      },
+      "/home/daniel/workspace/agendaedu/app/services/current_parlamentarian.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          4,
+          4,
+          null,
+          1,
+          null,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1608142956
+    "timestamp": 1608150693
   }
 }

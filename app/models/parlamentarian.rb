@@ -2,7 +2,7 @@ class Parlamentarian < ApplicationRecord
   # Relationships
   has_many :expenses, dependent: :destroy
   # Validations
-  validates :id_register, presence: true, uniqueness: true
+  validates :id_register, presence: true, uniqueness: { case_sensitive: false }
   validates :uf, presence: true
   validates :num_legislature, presence: true
   validates :name, presence: true

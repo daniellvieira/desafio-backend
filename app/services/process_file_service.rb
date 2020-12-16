@@ -1,12 +1,11 @@
 class ProcessFileService
-  def initialize(params={})
-    @file_history = FileHistory.find(params[:file_history_id])
+  def initialize(file_history_id)
+    @file_history = FileHistory.find(file_history_id)
   end
 
   def call
     return true unless file_history.pending?
 
-    self.path = ActiveStorage::Blob.service.send(:path_for, file_history.file.key)
     process_csv
     file_history.success!
   rescue StandardError => e
@@ -15,10 +14,11 @@ class ProcessFileService
 
   private
 
-  attr_reader :file_history, :path
+  attr_reader :file_history
 
   def process_csv
     options = { encoding: 'bom|utf-8', headers: :first_row, col_sep: ';' }
+    path = ActiveStorage::Blob.service.send(:path_for, file_history.file.key)
     CSV.foreach(path, **options) do |row|
       expense = row.to_h.try(:deep_symbolize_keys)
       next unless valid_infos(expense)
