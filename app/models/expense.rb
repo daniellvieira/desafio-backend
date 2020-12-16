@@ -15,7 +15,7 @@ class Expense < ApplicationRecord
   end
 
   def self.chart_by_month
-    group_by_month_of_year(:date_issue)
+    group_by_month_of_year(:date_issue, time_zone: false)
       .sum(:value)
       .map{ |k, v| [I18n.t('date.month_names')[k], v] }
   end

@@ -3,7 +3,7 @@ class ExpensesController < ApplicationController
   before_action :set_expense, only: %i[show]
 
   def index
-    @top5_expenses = @parlamentarian.expenses.top(5)
+    @top7_expenses = @parlamentarian.expenses.top(7)
     @month_chart = @parlamentarian.expenses.chart_by_month
     @provider_chart = @parlamentarian.expenses.chart_top_providers(5)
 

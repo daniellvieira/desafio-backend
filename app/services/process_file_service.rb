@@ -27,6 +27,9 @@ class ProcessFileService
       next unless ceap_infos[:sgUF].eql?(Rails.configuration.state.uf)
       next if ceap_infos[:ideCadastro].blank?
 
+      next unless ceap_infos[:datEmissao].present?
+      next unless ceap_infos[:vlrLiquido].present?
+
       puts ceap_infos
 
       parlamentarian = CurrentParlamentarian.new(ceap_infos).call

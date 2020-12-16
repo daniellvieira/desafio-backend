@@ -3,13 +3,15 @@
     .card.text-center.shadow.overflow-inherit
       %img.card-img-top{:alt => "Card image cap", src: image_parlamentarian_url(@parlamentarian.id_register)}/
       .card-body
-        %h5.card-title= @parlamentarian.name
+        %h5.card-title.mb-0= @parlamentarian.name
+      %ul.list-group.list-group-flush
+        %li.list-group-item= t('.expenses_total', total: number_to_currency(@parlamentarian.total))
   .col-md-9.pr-0
     .card.shadow.overflow-inherit.p-3
       .d-sm-flex.align-items-center.justify-content-between.pb-3.pt-3
         .h4.title-gray= t('.top5_title')
       .list-group
-        - @top5_expenses.each do |expense|
+        - @top7_expenses.each do |expense|
           .list-group-item.list-group-item-action
             = details_expense(expense)
 .row
