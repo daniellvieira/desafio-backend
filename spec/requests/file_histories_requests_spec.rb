@@ -4,7 +4,7 @@ RSpec.describe 'FileHistories', type: :request do
   context 'POST /file_histories' do
     let(:url) { '/file_histories' }
     context 'with valid params' do
-      let(:file_history_params) { { file_history: attributes_for(:file_history, :with_file) } }
+      let(:file_history_params) { { file_history: attributes_for(:file_history) } }
 
       it 'adds a new FileHistory' do
         expect do
@@ -31,7 +31,7 @@ RSpec.describe 'FileHistories', type: :request do
 
     context 'with invalid params' do
       let(:file_history_invalid_params) do
-        { file_history: attributes_for(:file_history, :with_file, description: nil) }
+        { file_history: attributes_for(:file_history, description: nil) }
       end
 
       it 'does not add a new FileHistory' do

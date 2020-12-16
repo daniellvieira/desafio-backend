@@ -3,7 +3,7 @@
   .col.card.shadow.overflow-inherit
     .d-sm-flex.align-items-center.justify-content-between.pb-3.pt-3
       .h4.title-gray= t('.title')
-    = search_form_for @search, url: root_path, class: 'form-inline' do |f|
+    = search_form_for @ransack, url: root_path, class: 'form-inline' do |f|
       .form-group.mb-2
         = f.label :name, "Pesquisar pelo Nome ou Partido"
       .form-group.mx-sm-3.mb-2
@@ -15,12 +15,12 @@
         %thead.thead-light
           %tr
             %th{title: model_class.human_attribute_name(:id_register_detail)}
-              = sort_link(@search, :id_register, model_class.human_attribute_name(:id_register))
+              = sort_link(@ransack, :id_register, model_class.human_attribute_name(:id_register))
             %th{title: model_class.human_attribute_name(:name_detail)}
-              = sort_link(@search, :name, model_class.human_attribute_name(:name))
+              = sort_link(@ransack, :name, model_class.human_attribute_name(:name))
             %th{title: model_class.human_attribute_name(:political_party_detail)}
-              = sort_link(@search, :political_party, model_class.human_attribute_name(:political_party))
-            %th= sort_link(@search, :total, t('.total'))
+              = sort_link(@ransack, :political_party, model_class.human_attribute_name(:political_party))
+            %th= sort_link(@ransack, :total, t('.total'))
             %th= t('helpers.list.actions')
         %tbody
           - @parlamentarians.each do |parlamentarian|

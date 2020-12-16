@@ -3,7 +3,7 @@
   .col.card.shadow.overflow-inherit
     .d-sm-flex.align-items-center.justify-content-between.pb-3.pt-3
       .h4.title-gray= t('.title')
-    = search_form_for @search, url: parlamentarian_expenses_path(@parlamentarian), class: 'form-inline' do |f|
+    = search_form_for @ransack, url: parlamentarian_expenses_path(@parlamentarian), class: 'form-inline' do |f|
       .form-group.mb-2
         = f.label :name, "Pesquisar pelo Fornecedor"
       .form-group.mx-sm-3.mb-2
@@ -15,11 +15,11 @@
         %thead.thead-light
           %tr
             %th{title: model_class.human_attribute_name(:date_issue)}
-              = sort_link(@search, :date_issue, model_class.human_attribute_name(:date_issue))
+              = sort_link(@ransack, :date_issue, model_class.human_attribute_name(:date_issue))
             %th{title: model_class.human_attribute_name(:provider)}
-              = sort_link(@search, :provider, model_class.human_attribute_name(:provider))
+              = sort_link(@ransack, :provider, model_class.human_attribute_name(:provider))
             %th{title: model_class.human_attribute_name(:value)}
-              = sort_link(@search, :value, model_class.human_attribute_name(:value))
+              = sort_link(@ransack, :value, model_class.human_attribute_name(:value))
             %th{title: model_class.human_attribute_name(:url_document)}
               = model_class.human_attribute_name(:url_document)
         %tbody
