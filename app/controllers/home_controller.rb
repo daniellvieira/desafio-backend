@@ -8,8 +8,4 @@ class HomeController < ApplicationController
     @search.sorts = 'total DESC' if @search.sorts.empty?
     @parlamentarians = @search.result.page(params[:page])
   end
-
-  def filter_parlamentarians_params
-    params.slice(:cidade_id)
-  end
 end
