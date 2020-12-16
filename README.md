@@ -24,6 +24,7 @@ A Cota para o Exercício da Atividade Parlamentar, custeia as despesas do mandat
 `rails db:migrate`
 
 - Node & Yarn
+`yarn install --check-files`
 `rails webpacker:compile`
 
 ## Diagrama do DB
