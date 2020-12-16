@@ -4,6 +4,8 @@ class ExpensesController < ApplicationController
 
   def index
     @top5_expenses = @parlamentarian.expenses.top(5)
+    @month_chart = @parlamentarian.expenses.chart_by_month
+    @provider_chart = @parlamentarian.expenses.chart_top_providers(5)
 
     @search = @parlamentarian.expenses.search(params[:q])
     @search.sorts = 'data_issue ASC' if @search.sorts.empty?
