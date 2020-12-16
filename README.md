@@ -28,8 +28,7 @@ A Cota para o Exercício da Atividade Parlamentar, custeia as despesas do mandat
 
 ## Diagrama do DB
 
-![alt text](https://github.com/daniellvieira/desafio-backend/tree/main/public/diagram1.png?raw=true)
-
+![Screenshot](diagram1.png)
 
 ## Features
 - [x] Possibilitar o upload do arquivo
