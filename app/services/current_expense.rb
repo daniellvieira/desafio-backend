@@ -8,7 +8,8 @@ class CurrentExpense
   def call
     expense = Expense.find_by(
       id_document: @params[:ideDocumento],
-      value: @params[:vlrLiquido]
+      value: @params[:vlrLiquido],
+      date_issue: @params[:datEmissao]
     )
     return expense if expense
 
