@@ -26,6 +26,11 @@ A Cota para o Exercício da Atividade Parlamentar, custeia as despesas do mandat
 - Node & Yarn
 `rails webpacker:compile`
 
+## Diagrama do DB
+
+![alt text](https://github.com/daniellvieira/desafio-backend/tree/main/public/diagram1.png?raw=true)
+
+
 ## Features
 - [x] Possibilitar o upload do arquivo
 - [x] Organizar os dados extraidos do arquivo em tabelas no banco de dados
