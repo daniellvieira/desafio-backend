@@ -9,8 +9,8 @@ class CreateTrgAttTotalParlamentarian < ActiveRecord::Migration[6.0]
       AS $BODY$
 
       DECLARE
-        old_total integer;
-        new_total integer;
+        old_total double precision;
+        new_total double precision;
       BEGIN
         IF TG_OP = 'INSERT' OR TG_OP = 'UPDATE' THEN
           SELECT SUM(e.value)
