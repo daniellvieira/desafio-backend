@@ -9,10 +9,14 @@ class Expense < ApplicationRecord
   end
 
   def self.chart_top_providers(limit = 5)
-    group(:provider).sum(:value).sort_by { |k,v| -v }.first(limit).to_h
+    group(:provider)
+      .sum(:value)
+      .sort_by { |k,v| -v }.first(limit).to_h
   end
 
   def self.chart_by_month
-    group_by_month_of_year(:date_issue).sum(:value).map{ |k, v| [I18n.t("date.month_names")[k], v] }  
+    group_by_month_of_year(:date_issue)
+      .sum(:value)
+      .map{ |k, v| [I18n.t('date.month_names')[k], v] }
   end
 end
