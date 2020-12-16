@@ -3,7 +3,7 @@ module FilesTestHelper
   extend ActionDispatch::TestProcess
 
   def ceap_2020
-    upload('Ano-2020.csv', 'text/plain')
+    upload('Ano-2020.csv', 'text/csv')
   end
 
   private

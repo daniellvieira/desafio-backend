@@ -1,6 +1,6 @@
 class Parlamentarian < ApplicationRecord
   # Relationships
-  has_many :expenses
+  has_many :expenses, dependent: :destroy
   # Validations
   validates :id_register, presence: true, uniqueness: true
   validates :uf, presence: true

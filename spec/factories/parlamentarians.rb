@@ -1,11 +1,10 @@
 FactoryBot.define do
   factory :parlamentarian do
-    name { "MyString" }
-    id_register { "MyString" }
-    num_portfolio { "MyString" }
-    num_legislature { "MyString" }
-    uf { "MyString" }
-    political_party { "MyString" }
-    cod_legislature { "MyString" }
+    sequence(:name) { |n| "Parlamentar #{n}" }
+    sequence(:id_register) { |id| "Num #{id}" }
+    uf { 'CE' }
+    political_party { 'NOVO' }
+    cod_legislature { '3030' }
+    num_legislature { '30' }
   end
 end
