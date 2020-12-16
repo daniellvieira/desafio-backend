@@ -20,6 +20,9 @@ class CurrentExpense
   private
 
   def create_expense
+    return unless @params[:datEmissao].present?
+    return unless @params[:vlrLiquido].present?
+
     @parlamentarian.expenses.create!(
       date_issue: @params[:datEmissao],
       provider: @params[:txtFornecedor],

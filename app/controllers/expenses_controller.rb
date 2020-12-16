@@ -8,7 +8,7 @@ class ExpensesController < ApplicationController
     @provider_chart = @parlamentarian.expenses.chart_top_providers(5)
 
     @search = @parlamentarian.expenses.search(params[:q])
-    @search.sorts = 'data_issue ASC' if @search.sorts.empty?
+    @search.sorts = 'date_issue ASC' if @search.sorts.empty?
     @expenses = @search.result.page(params[:page])
   end
 
