@@ -13,7 +13,7 @@
         .form-group.row
           = f.label :file, model_class.human_attribute_name(:file), class: label_class(3)
           .col-9
-            = f.file_field :file, accept: '.csv', required: true
+            = f.file_field :file, accept: '.csv', required: true, direct_upload: true, multiple: false
         .form-group.float-right
           = f.submit t('.send', default: t('helpers.submit.send')), class: btn_class(:primary)
 #list

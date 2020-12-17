@@ -18,15 +18,16 @@ class ProcessFileService
 
   def process_csv
     options = { encoding: 'bom|utf-8', headers: :first_row, col_sep: ';' }
-    path = ActiveStorage::Blob.service.send(:path_for, file_history.file.key)
-    CSV.foreach(path, **options) do |row|
-      expense = row.to_h.try(:deep_symbolize_keys)
-      next unless valid_infos(expense)
-
-      parlamentarian = CurrentParlamentarian.new(expense).call
-      next unless parlamentarian.is_a?(Parlamentarian)
-
-      CurrentExpense.new(parlamentarian, expense).call
+    file_history.file.open do |file|
+      CSV.foreach(file, **options) do |row|
+        expense = row.to_h.try(:deep_symbolize_keys)
+        next unless valid_infos(expense)
+  
+        parlamentarian = CurrentParlamentarian.new(expense).call
+        next unless parlamentarian.is_a?(Parlamentarian)
+  
+        CurrentExpense.new(parlamentarian, expense).call
+      end
     end
   end
 
