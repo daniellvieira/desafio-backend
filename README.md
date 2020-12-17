@@ -2,6 +2,12 @@
 
 A Cota para o Exercício da Atividade Parlamentar, custeia as despesas do mandato, como passagens aéreas e conta de celular. Algumas são reembolsadas, como as com os Correios, e outras são pagas por débito automático, como a compra de passagens. Nos casos de reembolso, os deputados têm três meses para apresentar os recibos. O valor mensal não utilizado fica acumulado ao longo do ano. Por esse motivo, em alguns meses o valor gasto pode ser maior que a média mensal. (Fonte: Portal da Câmara dos Deputados). Através do portal da transparência, nós temos acesso a essas despesas e podemos saber como e onde os políticos estão gastando.
 
+# Informações Gerais
+
+- O sistema está hospedado no Heroku, em: [a link](https://fast-sierra-17697.herokuapp.com/)
+- ActiveStorage armazenando os arquivos no AWS S3.
+- ActiveJob para a leitura do arquivo em segundo plano.
+
 # Gems
 
 - chartkick & groupdate ( para gerar os gráficos )
@@ -10,6 +16,7 @@ A Cota para o Exercício da Atividade Parlamentar, custeia as despesas do mandat
 - ransack ( filtros e ordenação das listagens )
 - kaminari ( paginação )
 - redis & sidekiq ( realizar ações em segundo plano )
+- aws-sdk-s3 ( armazenar os arquivo no AWS S3 )
 
 
 ## Pré-requisitos
