@@ -33,8 +33,6 @@ class CreateTrgAttTotalParlamentarian < ActiveRecord::Migration[6.0]
         RETURN null;
       END;
       $BODY$;
-      ALTER FUNCTION public.trg_att_total_parlamentarian()
-      OWNER TO postgres;
 
       CREATE TRIGGER trg_att_total_parlamentarian
         AFTER INSERT OR UPDATE OR DELETE
