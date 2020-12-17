@@ -4,7 +4,7 @@ A Cota para o Exercício da Atividade Parlamentar, custeia as despesas do mandat
 
 # Informações Gerais
 
-- O sistema está hospedado no Heroku, em: [a link](https://fast-sierra-17697.herokuapp.com/)
+- O sistema está hospedado no Heroku, em: [desafio-backend](https://fast-sierra-17697.herokuapp.com/)
 - ActiveStorage armazenando os arquivos no AWS S3.
 - ActiveJob para a leitura do arquivo em segundo plano.
 
@@ -49,3 +49,4 @@ A Cota para o Exercício da Atividade Parlamentar, custeia as despesas do mandat
 - [x] Exibir gráficos para melhorar a visualização dos gastos
 - [x] Evitar N + 1 nas queries
 - [x] Organizar estrutura do projeto utilizando padrões de projetos
+- [x] Aplicação hospedada no Heroku, AWS ou similares
